@@ -1,15 +1,174 @@
+:root{
+    --white:#ffffff;
+    --grey:#f0eef1;
+    --light-green: #9fff9c;
+    --light-red: #ff9c9c;
+    --border-radius:8px;
+    --spacing-xs:5px;
+    --spacing-sm:10px;
+    --spacing-md:15px;
+    --spacing-lg:20px;
+    --spacing-xl:40px;
+    --shadow:rgba(0,0,0,0.16) 0px 1px 4px;
+}
+
 *{
     margin:0;
     padding:0;
     border:0;
     outline:0;
-    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
+body{
+    background-color: var(--grey);
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+button,input{
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+    outline: none;
+}
 
+input[type='text'],
+input[type='text']{
+    cursor:text;
+}
+
+html{
+    position: relative;
+    min-height: 100%;
+}
+button:hover{
+    filter: brightness(90%);
+}
+button:active{
+    filter: brightness(70%);
+}
+
+/* header */
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: var(--shadow);
+    background-color: var(--white);
+    align-items: center;
+}
+header div,header h1{
+    margin: var(--spacing-lg);
+}
 .login_btn{
     font-size: large;
-    padding: 10px;
-    border-radius: 5px;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
     width: 100px;
+}
+
+/* main */
+
+main{
+    width: 100%;
+}
+.add-item-button{
+    width: 100%;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+}
+.add-item-button button{
+    margin: var(--spacing-lg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+}
+.add-btn{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.books-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: var(--spacing-xl);
+}
+.book-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 20px;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    line-height: 1.2;
+    text-align: center;
+    margin-left: var(--spacing-xl);
+}
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+.btn-light-green{
+    background-color: var(--light-green);
+  }
+.btn-light-red {
+    background-color: var(--light-red);
+  }
+/* footer */
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: var(--spacing-sm);
+}
+
+/* submit form */
+.checkbox{
+    display: flex;
+    align-items: center ;
+    justify-content: space-around;
+}
+.checkbox input{
+    width: 18px;
+}
+.addBookModal{
+    position: fixed;
+    z-index: 1;
+    top: 30vh;
+    left: 40vw;
+    width: 300px;
+    background-color: #b0afafff;
+    border-radius: var(--border-radius);
+    height: 400px;
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+
+.addBookForm{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.submitBtn{
+    background-color: #9fff9c;
+    border-radius: var(--border-radius);
+    height: 45px;
+}
+.addBookForm input{
+    border-radius: var(--border-radius);
+    height: 45px;
+    padding-left: 10px;
 }
